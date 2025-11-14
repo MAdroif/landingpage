@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogicFlow - Ubah Skrip Jadi Carousel Instan</title>
+    
+    <!-- Tailwind CSS -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* slate-900 */
+            color: #F8FAFC; /* slate-50 */
+        }
+        .header {
+          background: rgba(15, 23, 42, 0.6);
+          backdrop-filter: blur(16px);
+        }
+        .gradient-text {
+            background-image: linear-gradient(to right, #4F46E5, #7C3AED, #A78BFA); /* Indigo-500, Purple-600, Violet-400 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .cta-button {
+            background-color: #F97316; /* orange-500 */
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #EA580C; /* orange-600 */
+        }
+        .pricing-card-highlight {
+            border-color: #8B5CF6; /* violet-500 */
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="header fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="#">LogicFlow</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#benefits" class="text-slate-300 hover:text-white transition">Benefits</a>
+                <a href="#pricing" class="text-slate-300 hover:text-white transition">Pricing</a>
+                <a href="#faq" class="text-slate-300 hover:text-white transition">FAQ</a>
+            </div>
+            <a href="login.html" class="px-5 py-2 text-white bg-slate-800 rounded-lg hover:bg-slate-700 transition">Login</a>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- 1. Hero Section -->
+        <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden">
+            <div class="absolute inset-0 -z-10 bg-grid-slate-700/[0.05]"></div>
+             <div class="absolute top-0 left-1/2 -translate-x-1/2 -z-10">
+                <div class="w-[60rem] h-40 bg-purple-500/20 blur-[120px]"></div>
+            </div>
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                    Bikin Carousel <span class="gradient-text">Auto Jadi</span>, dari<br> Skrip ke Slide dalam hitungan Detik
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-300">
+                    Hemat waktu berjam-jam. Cukup masukkan skrip, dan biarkan AI kami mengubahnya menjadi konten carousel yang siap posting untuk media sosial Anda.
+                </p>
+                <div class="mt-10">
+                    <a href="#login" class="cta-button inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-lg shadow-lg">
+                        <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.223,0-9.657-3.357-11.297-7.909l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.574l6.19,5.238C39.986,34.81,44,29.833,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+                        Login dengan Google untuk Mulai
+                    </a>
+                </div>
+                
+                <!-- Mockup Preview -->
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <div class="bg-slate-800 rounded-t-xl p-4 border-b border-slate-700">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                    </div>
+                    <img src="Screenshot_2025-11-02-16-25-35-999_com.foxdebug.acode.png" alt="Mockup dashboard SlideForge" class="w-full rounded-b-xl shadow-2xl shadow-purple-500/20">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Demo Produk -->
+        <section id="demo" class="py-20 sm:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Lihat Cara Kerjanya</h2>
+                    <p class="mt-4 text-lg text-slate-300">
+                        Dari skrip sederhana menjadi carousel profesional. Prosesnya sangat cepat dan mudah.
+                    </p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto">
+                     <img src="https://placehold.co/1200x675/1E293B/F97316?text=Animasi+GIF+Proses+Input-Output" alt="Animasi demo produk SlideForge" class="w-full rounded-xl shadow-lg border border-slate-700">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Value Proposition / Benefit Section -->
+        <section id="benefits" class="py-20 sm:py-24 bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Dirancang untuk Efisiensi</h2>
+                    <p class="mt-4 text-lg text-slate-300">
+                        Fokus pada ide konten Anda, biarkan kami yang mengurus visualnya.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="bg-slate-800 p-8 rounded-lg">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <h3 class="mt-6 font-semibold text-xl">Hemat Waktu Drastis</h3>
+                        <p class="mt-2 text-slate-400">Ubah draf tulisan menjadi puluhan slide dalam hitungan menit, bukan jam.</p>
+                    </div>
+                    <!-- Benefit 2 -->
+                    <div class="bg-slate-800 p-8 rounded-lg">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <i data-lucide="paintbrush-2"></i>
+                        </div>
+                        <h3 class="mt-6 font-semibold text-xl">Desain Otomatis</h3>
+                        <p class="mt-2 text-slate-400">Tak perlu skill desain. AI kami memilih layout, warna, dan font yang menarik.</p>
+                    </div>
+                    <!-- Benefit 3 -->
+                    <div class="bg-slate-800 p-8 rounded-lg">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <i data-lucide="edit"></i>
+                        </div>
+                        <h3 class="mt-6 font-semibold text-xl">Fleksibel & Bisa Diedit</h3>
+                        <p class="mt-2 text-slate-400">Hasil akhir bisa Anda sesuaikan. Ganti gambar, teks, atau warna dengan mudah.</p>
+                    </div>
+                    <!-- Benefit 4 -->
+                    <div class="bg-slate-800 p-8 rounded-lg">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <i data-lucide="send"></i>
+                        </div>
+                        <h3 class="mt-6 font-semibold text-xl">Langsung Siap Posting</h3>
+                        <p class="mt-2 text-slate-400">Ekspor carousel dalam format gambar atau PDF yang dioptimalkan untuk media sosial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Pricing Section -->
+        <section id="pricing" class="py-20 sm:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Harga yang Fleksibel</h2>
+                    <p class="mt-4 text-lg text-slate-300">
+                        Pilih paket token sesuai kebutuhan Anda. Tanpa langganan bulanan, tanpa masa berlaku.
+                    </p>
+                </div>
+
+                <div class="mt-16 max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Tier 1: Starter -->
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-8 flex flex-col">
+                        <h3 class="text-lg font-semibold text-violet-400">Starter</h3>
+                        <p class="mt-4 text-4xl font-bold">50 Token</p>
+                        <p class="mt-2 text-slate-400">Untuk penggunaan sesekali.</p>
+                        <p class="mt-6 text-2xl font-semibold">Rp 75.000</p>
+                        <p class="text-sm text-slate-500">Pembelian satu kali</p>
+                        <a href="#login" class="mt-8 w-full text-center cta-button text-white font-semibold py-3 rounded-lg">Mulai Sekarang</a>
+                    </div>
+
+                    <!-- Tier 2: Creator (Highlighted) -->
+                    <div class="pricing-card-highlight bg-slate-800 border-2 rounded-lg p-8 flex flex-col relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-violet-500 text-white text-sm font-semibold rounded-full">Paling Populer</div>
+                        <h3 class="text-lg font-semibold text-violet-400">Creator</h3>
+                        <p class="mt-4 text-4xl font-bold">200 Token</p>
+                        <p class="mt-2 text-slate-400">Ideal untuk content creator aktif.</p>
+                        <p class="mt-6 text-2xl font-semibold">Rp 250.000</p>
+                        <p class="text-sm text-slate-500">Pembelian satu kali</p>
+                        <a href="#login" class="mt-8 w-full text-center cta-button text-white font-semibold py-3 rounded-lg">Mulai Sekarang</a>
+                    </div>
+                    
+                    <!-- Tier 3: Pro -->
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-lg p-8 flex flex-col">
+                        <h3 class="text-lg font-semibold text-violet-400">Pro</h3>
+                        <p class="mt-4 text-4xl font-bold">500 Token</p>
+                        <p class="mt-2 text-slate-400">Untuk agensi dan power user.</p>
+                        <p class="mt-6 text-2xl font-semibold">Rp 500.000</p>
+                        <p class="text-sm text-slate-500">Pembelian satu kali</p>
+                        <a href="#login" class="mt-8 w-full text-center cta-button text-white font-semibold py-3 rounded-lg">Mulai Sekarang</a>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center text-slate-400">
+                    <p>🎉 <span class="font-semibold text-slate-200">Dapatkan 30 token gratis!</span> Cukup login dengan akun Google Anda untuk memulai.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FAQ Section -->
+        <section id="faq" class="py-20 sm:py-24 bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Pertanyaan Umum</h2>
+                    <p class="mt-4 text-lg text-slate-300">
+                        Beberapa hal yang mungkin ingin Anda ketahui.
+                    </p>
+                </div>
+
+                <div class="mt-16 max-w-3xl mx-auto space-y-8">
+                    <div class="border-b border-slate-700 pb-6">
+                        <h3 class="text-lg font-semibold">Apakah token ada masa berlakunya?</h3>
+                        <p class="mt-2 text-slate-400">Tidak. Token yang Anda beli tidak akan pernah hangus. Gunakan kapan pun Anda butuhkan.</p>
+                    </div>
+                    <div class="border-b border-slate-700 pb-6">
+                        <h3 class="text-lg font-semibold">Apa beda tiap paket token?</h3>
+                        <p class="mt-2 text-slate-400">Satu-satunya perbedaan adalah jumlah token yang Anda dapatkan dan harga per token yang lebih murah pada paket yang lebih besar. Semua fitur terbuka untuk semua pengguna.</p>
+                    </div>
+                    <div class="border-b border-slate-700 pb-6">
+                        <h3 class="text-lg font-semibold">Apakah bisa dipakai di semua device?</h3>
+                        <p class="mt-2 text-slate-400">Ya. SlideForge adalah platform berbasis web, jadi Anda bisa mengaksesnya dari browser di desktop, laptop, tablet, atau smartphone Anda.</p>
+                    </div>
+                    <div class="border-b border-slate-700 pb-6">
+                        <h3 class="text-lg font-semibold">Sistem pembayaran apa yang tersedia?</h3>
+                        <p class="mt-2 text-slate-400">Kami menggunakan payment gateway pihak ketiga yang aman dan terpercaya (seperti Stripe atau Midtrans) untuk memproses semua pembayaran. Kami tidak menyimpan informasi kartu kredit Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CTA Ulang di Bawah -->
+        <section id="login" class="py-20 sm:py-24">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                    Siap Mengubah Skrip Anda<br>Menjadi Konten Viral?
+                </h2>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-300">
+                    Coba gratis sekarang. Tidak perlu kartu kredit, cukup login dengan akun Google Anda dan dapatkan token gratis untuk memulai.
+                </p>
+                <div class="mt-10">
+                    <a href="login.html" class="cta-button inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-lg shadow-lg">
+                        <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.223,0-9.657-3.357-11.297-7.909l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.574l6.19,5.238C39.986,34.81,44,29.833,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+                        Login dengan Google & Mulai Gratis
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2025 LogicFlow. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    
+    <!-- Firebase Config (create this file with your config) -->
+    <script src="firebase-config.js"></script>
+    
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Redirect to dashboard if already logged in
+        FirebaseAuthManager.redirectIfAuthenticated('dashboard.html');
+    </script>
+
+</body>
+</html>
