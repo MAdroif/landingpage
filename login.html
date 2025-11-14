@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SlideGen</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transition: all 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        p {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        .login-btn {
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #555;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+        .login-btn:hover {
+            background-color: #f5f5f5;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        .login-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .google-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .error-message {
+            background-color: #fee;
+            color: #c33;
+            padding: 0.8rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            display: none;
+            font-size: 0.9rem;
+        }
+        .back-link {
+            margin-top: 1.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Selamat Datang</h1>
+        <p>Silakan masuk untuk melanjutkan ke SlideGen.</p>
+        
+        <button id="google-login-btn" class="login-btn" onclick="handleGoogleLogin()">
+            <img class="google-icon" src="https://www.svgrepo.com/show/355037/google.svg" alt="Google icon">
+            <span id="button-text">Masuk dengan Google</span>
+            <div class="spinner" id="spinner"></div>
+        </button>
+        
+        <div class="error-message" id="error-message"></div>
+        
+        <a href="halaman_arahan.html" class="back-link">← Kembali ke halaman utama</a>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
+
+    <script>
+        // Redirect to dashboard if already logged in
+        FirebaseAuthManager.redirectIfAuthenticated('UIFigma.html');
+        
+        // Handle Google Login
+        async function handleGoogleLogin() {
+            const btn = document.getElementById('google-login-btn');
+            const buttonText = document.getElementById('button-text');
+            const spinner = document.getElementById('spinner');
+            const errorMessage = document.getElementById('error-message');
+            
+            // Hide error message
+            errorMessage.style.display = 'none';
+            
+            // Show loading state
+            btn.disabled = true;
+            buttonText.style.display = 'none';
+            spinner.style.display = 'block';
+            
+            try {
+                const result = await FirebaseAuthManager.loginWithGoogle();
+                
+                if (result.success) {
+                    // Success! Show success message briefly
+                    buttonText.textContent = 'Login berhasil! Mengalihkan...';
+                    buttonText.style.display = 'block';
+                    spinner.style.display = 'none';
+                    
+                    // Redirect to dashboard
+                    setTimeout(() => {
+                        window.location.href = 'UIFigma.html';
+                    }, 1000);
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                // Show error
+                console.error('Login error:', error);
+                errorMessage.textContent = 'Login gagal: ' + error.message;
+                errorMessage.style.display = 'block';
+                
+                // Reset button
+                btn.disabled = false;
+                buttonText.textContent = 'Masuk dengan Google';
+                buttonText.style.display = 'block';
+                spinner.style.display = 'none';
+            }
+        }
+        
+        // Allow Enter key to trigger login
+        document.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleGoogleLogin();
+            }
+        });
+    </script>
+</body>
+</html>
