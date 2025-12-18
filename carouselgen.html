@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Generator - LogicFlow</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="landing_page.html" class="logo">LogicFlow</a>
+            
+            <!-- Desktop Menu -->
+            <div class="nav-menu">
+                <!-- <div class="nav-item" id="tools-nav">
+                    Tools
+                    <span class="dropdown-arrow">▼</span>
+                    <div class="dropdown" id="tools-dropdown">
+                        <a href="carouselgen.html" class="dropdown-item">
+                            <span class="icon">🎨</span>
+                            <span>Carousel Generator</span>
+                            <span class="badge-new">New</span>
+                        </a>
+                        <a href="cs-ai.html" class="dropdown-item">
+                            <span class="icon">🤖</span>
+                            <span>CS AI + Eskalasi</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-item" onclick="scrollToSection('pricing')">
+                    <a href="pricing.html" class="dropdown-item">
+                    Pricing</a>
+                </div>
+                
+                <div class="nav-item" id="docs-nav">
+                    Docs
+                    <span class="dropdown-arrow"></span>
+                    <div class="dropdown" id="docs-dropdown">
+                        <a href="#docs" class="dropdown-item">
+                            <span class="icon"></span>
+                            <span>Documentation</span>
+                        </a>
+                        <a href="#faq" class="dropdown-item">
+                            <span class="icon"></span>
+                            <span>FAQ</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="profile-icon" id="profile-nav">👤
+                    
+                    <div class="dropdown" id="profile-dropdown">
+                        <a href="#profile" class="dropdown-item">
+                            <span class="icon"></span>
+                            <span>Profile</span>
+                        </a>
+                        <a href="#contact" class="dropdown-item">
+                            <span class="icon"></span>
+                            <span>Contact</span>
+                        </a>
+                        <a href="#settings" class="dropdown-item">
+                            <span class="icon">️</span>
+                            <span>Settings</span>
+                        </a>
+                        <div class="divider"></div>
+                        <a href="#logout" class="dropdown-item">
+                            <span class="icon"></span>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div> -->
+                
+                <div class="nav-item">
+                    <a href="https://docs.google.com/document/d/1efLJ3UoMxR-_ttDcq7H8K4QcjsmWbZDj1YMedhw2L84/edit?usp=sharing" style="text-decoration: none; color: inherit;">Docs</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <!-- <div class="mobile-nav-item">
+            <div onclick="toggleMobileDropdown('mobile-tools')">
+                Tools ▼
+            </div>
+            <div class="mobile-dropdown-items" id="mobile-tools">
+                <a href="#carousel">🎨 Carousel Generator</a>
+                <a href="#cs-ai">🤖 CS AI + Eskalasi</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item">
+            <a href="#pricing">Pricing</a>
+        </div>
+        <div class="mobile-nav-item">
+            <div onclick="toggleMobileDropdown('mobile-docs')">
+                Docs ▼
+            </div>
+            <div class="mobile-dropdown-items" id="mobile-docs">
+                <a href="#docs">Documentation</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item">
+            <div onclick="toggleMobileDropdown('mobile-profile')">
+                Profile ▼
+            </div>
+            <div class="mobile-dropdown-items" id="mobile-profile">
+                <a href="#profile">Profile</a>
+                <a href="#contact">Contact</a>
+                <a href="#settings">Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div> -->
+        
+        <div class="mobile-nav-item">
+            <a href="https://docs.google.com/document/d/1efLJ3UoMxR-_ttDcq7H8K4QcjsmWbZDj1YMedhw2L84/edit?usp=sharing">Docs</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <h1>
+                Bikin Carousel <span class="gradient-text">Auto Jadi</span><br>
+                dari Skrip dalam Hitungan Detik
+            </h1>
+            <p>
+                Hemat waktu berjam-jam. Cukup masukkan skrip, dan biarkan AI mengubahnya menjadi konten carousel yang siap posting untuk media sosial Anda.
+            </p>
+            <a href="https://madroif.github.io/frontend/" class="cta-button">Coba Sekarang - Gratis</a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <h2 class="section-title">Lihat Cara Kerjanya</h2>
+        <p class="section-subtitle">Dari skrip sederhana menjadi carousel profesional. Prosesnya sangat cepat dan mudah.</p>
+        
+        <!-- Placeholder for demo -->
+        <div class="demovid">
+            <video autoplay loop muted playsinline controls preload="metadata" loading="lazy">
+              <source src="DemoVid.mp4" type="video/mp4" alt="Demo">Browser Anda tidak mendukung tag video
+            </video>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section>
+        <h2 class="section-title">Dirancang untuk Efisiensi</h2>
+        <p class="section-subtitle">Fokus pada ide konten Anda, biarkan kami yang mengurus visualnya.</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Hemat Waktu Drastis</h3>
+                <p>Ubah draf tulisan menjadi puluhan slide dalam hitungan menit, bukan jam.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🎨</div>
+                <h3>Desain Otomatis</h3>
+                <p>Tak perlu skill desain. AI kami memilih layout, warna, dan font yang menarik.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">✏️</div>
+                <h3>Fleksibel & Bisa Diedit</h3>
+                <p>Hasil akhir bisa Anda sesuaikan. Ganti gambar, teks, atau warna dengan mudah.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">📤</div>
+                <h3>Langsung Siap Posting</h3>
+                <p>Ekspor carousel dalam format gambar atau PDF yang dioptimalkan untuk media sosial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <!-- <section>
+        <h2 class="section-title" style="font-size: 2rem;">Paket Token</h2>
+        <p class="section-subtitle">Token untuk Carousel Generator & tools lainnya</p>
+        
+        <div class="pricing-grid">
+            Starter
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="token-count">10 Token</div>
+                <div class="price">
+                    <span class="old-price">Rp 5.000</span>
+                    <span class="current-price">Rp 4.000</span>
+                </div>
+                <p>Untuk penggunaan sesekali. Ideal untuk testing atau project kecil.</p>
+                <a href="#" class="cta-button">Beli Sekarang</a>
+            </div>
+    
+            Creator (Popular)
+            <div class="pricing-card popular">
+                <div class="badge">Paling Populer</div>
+                <h3>Creator</h3>
+                <div class="token-count">50 Token</div>
+                <div class="price">
+                    <span class="old-price">Rp 16.900</span>
+                    <span class="current-price">Rp 15.500</span>
+                </div>
+                <p>Ideal untuk content creator aktif. Value terbaik per token.</p>
+                <a href="#" class="cta-button">Beli Sekarang</a>
+            </div>
+    
+            Pro
+            <div class="pricing-card">
+                <h3>Pro</h3>
+                <div class="token-count">200 Token</div>
+                <div class="price">
+                    <span class="old-price">Rp 65.900</span>
+                    <span class="current-price">Rp 59.000</span>
+                </div>
+                <p>Untuk agensi dan power user. Harga paling hemat per token.</p>
+                <a href="#" class="cta-button">Beli Sekarang</a>
+            </div>
+        </div>
+    
+        <div style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">
+            <p><strong style="color: var(--text-primary);">Gratis untuk mencoba!</strong> Cukup login dengan akun Google untuk memulai.</p>
+        </div>
+    </section> -->
+
+    <section class="founder-story">
+    <div class="story-container">
+        <div class="story-content">
+            <h2>Kenapa Gue Bikin Tool Ini</h2>
+            <p>
+                Dulu gue spend 2-3 jam setiap kali bikin carousel buat konten Instagram. 
+                Buka Canva, pilih template, copy-paste teks satu-per-satu, atur layout... 
+                capek banget.
+            </p>
+            <p>
+                Gue kepikiran: "Harusnya ini bisa otomatis. AI kan bisa breakdown teks 
+                jadi slide, pilih layout yang bagus, atur warna konsisten."
+            </p>
+            <p>
+                Akhirnya gue bikin tool ini. Sekarang gue pakai sendiri setiap hari. 
+                Yang dulu 2 jam, sekarang gak sampai 5 menit. Real time saver.
+            </p>
+            <p>
+                <strong>Kalau gue gak yakin tool ini useful, gue gak akan release.</strong>
+            </p>
+        </div>
+        <div class="story-cta">
+            <p>Mau coba juga?</p>
+            <a href="https://madroif.github.io/frontend/" class="cta-button">Mulai Gratis dulu</a>
+        </div>
+    </div>
+</section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">Pertanyaan Umum</h2>
+        
+        <div class="faq-item">
+            <h3>Tool ini cocok buat siapa?</h3>
+            <p>Tool ini cocok buat social media manager dan content creator yang butuh bikin carousel cepat untuk konten harian. Kalau kamu tipe yang suka ngulik desain sampai detail pixel, Canva bakal lebih cocok.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Apa bedanya dengan Canva?</h3>
+            <p>Carousel Generator fokus ke kecepatan. Masukkan ide/skrip → pilih template → download gambar. Canva lebih fleksibel, tapi lebih makan waktu. Tool ini dibuat buat yang ingin langsung posting, bukan desain lama-lama.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Berapa lama prosesnya?</h3>
+            <p>Biasanya selesai dalam 1-2 menit, tergantung jumlah slide dan panjang konten. Jauh lebih cepat dibanding bikin manual satu per satu.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Apakah hasilnya bisa diedit?</h3>
+            <p>Saat ini belum bisa. Desain dan layout mengikuti template yang kamu pilih. Hasilnya langsung berupa gambar siap posting. Fitur edit lanjutan masih dalam tahap pengembangan.</p>
+        </div>
+
+        <!-- <div class="faq-item">
+            <h3>Apakah token hangus?</h3>
+            <p>Tidak! Token yang kamu beli tidak pernah hangus. Pakai kapan saja kamu butuhkan.</p>
+        </div> -->
+    </section>
+
+    <!-- CTA -->
+    <section style="text-align: center; padding: 6rem 2rem;">
+        <h2 class="section-title">Siap Mengubah Skrip Anda<br>Menjadi Konten Viral?</h2>
+        <p style="color: var(--text-secondary); margin: 1rem 0 2rem;">Coba gratis sekarang. Tidak perlu kartu kredit, gratis untuk memulai.</p>
+        <a href="#" class="cta-button">Mulai Buat Carousel Sekarang</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 LogicFlow. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
