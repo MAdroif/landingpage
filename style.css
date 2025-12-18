@@ -954,7 +954,7 @@ section {
     width: 100%;
     height: auto;
     max-width: 800px;
-    object-fit: cover; /* atau 'cover' jika ingin mengisi container */
+    object-fit: contain; /* atau 'cover' jika ingin mengisi container */
     border-radius: 8px; /* opsional */
     box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* opsional */
 }
